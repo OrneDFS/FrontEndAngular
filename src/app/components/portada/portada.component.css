@@ -1,0 +1,96 @@
+main {
+    background-image:url(src\assets\img\pexels-cottonbro-4553182_1.jpg); 
+    height: 600px; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-size: cover; 
+    display: flex;
+    justify-content: center;
+    position: relative;
+    margin-bottom: 60px;
+} 
+
+h1 {
+    font-size: 700%;
+    font-weight: bold;
+    vertical-align: sub;
+    margin: 165px 80px 0 80PX;
+    text-align: center;
+    background: linear-gradient( to right,#031026fd ,#f2f0f3c0,#031026fd );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+}
+/* Animacion foto de perfil */
+#fotoPerfil {
+    z-index: -1;
+    font-size: 1.5em;
+    margin: 25px;
+    background-color: var(--colorazul);
+    color: var(--colorclaro);
+}
+.container{
+    position:absolute;
+    bottom: -80px;
+    left:50px;
+
+}
+
+.el_rostro{
+    width:100%;
+    height:auto;
+    margin: auto;
+    border-radius: 15px;
+    background-color: var(--colorazul);
+    padding: 5px;  
+}
+.mi_rostro{
+    width:auto;
+    height:100%;
+    border-radius: 15px;
+    background-color: var(--colorazul);
+    padding: 5px;
+}
+.flipy {
+    -webkit-perspective: 800;
+    width: 240px;
+    height:200px;
+
+}
+.flipy .card:hover {
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    -o-transform: rotateY(180deg);
+}
+.flipy .card {
+    width: 100%;
+    height: 100%;
+    -webkit-transform-style: preserve-3d;
+    -webkit-transition: 0.5s;
+    background-color: var(--colorazul);
+}
+.flipy .card .face {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    overflow: hidden;
+    -webkit-backface-visibility: hidden ;
+    z-index: 2;
+    font-size: 3em;
+    text-align: center;
+}
+.flipy .card .front {
+    position: absolute;
+    z-index: 1;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+.flipy .card .back {
+      -webkit-transform: rotateY(180deg);
+      -moz-transform: rotateY(180deg);
+      -o-transform: rotateY(180deg);
+      color: black;
+      cursor: pointer;
+  }

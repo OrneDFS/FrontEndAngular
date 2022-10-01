@@ -1,0 +1,57 @@
+.habilidades{
+    position: relative;
+    background-color: var(--colorazul);
+    color:var(--colorclaro);
+}
+
+
+/* Carrusel */
+.carousel-item {
+    height: 700px;
+    width: auto;
+    float: unset;
+    margin: 5%;
+    justify-content: center;
+ 
+}
+
+#carouselExampleIndicators{
+    justify-content: center;
+}
+
+#carruselItem1{
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-size: cover;
+    height: 100%;
+    width: auto;
+    background-color: rgba(190, 184, 184, 0.288);
+}
+
+#carruselItem2{
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-size: cover;
+    height: 100%;
+    width: auto;
+    background-color: rgba(190, 184, 184, 0.288);
+}
+
+#carruselItem3{
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-size: cover;
+    height: 100%;
+    width: auto;
+    background-color: rgba(190, 184, 184, 0.288);
+}
+
+.carousel-caption {
+    color: var(--colorgris);
+    border-radius: 15px;
+    text-align: center;
+    font-size: large, bold;
+    z-index: 2;
+    background-color: var(--colortranslucido) ;
+    align-items: center;
+}

@@ -1,0 +1,19 @@
+nav{
+    background-color: var(--colortranslucido);
+ }
+ .navbar .nav-link ,.navbar-brand{ 
+ color: var(--colorclaro);
+ }
+ 
+ .logoAP{
+     width:3em;
+ }
+ 
+ .login{
+     justify-content: end;
+ }
+ 
+ .navbar-toggler{
+     border-color: var(--colorclaro);
+     margin:5px ;
+ }

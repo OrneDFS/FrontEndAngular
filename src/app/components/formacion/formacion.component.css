@@ -1,0 +1,41 @@
+formacion {
+    position: relative;
+    color: var(--colorgris);
+    /* padding-bottom: 15px; */
+}
+  
+#formacion{
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-size: cover; 
+    background-color: var(--colorazul);
+ }
+#accordion{
+    margin: 2em;
+    padding-bottom: 3em;
+}
+
+.accordion-item{
+    background-color: var(--colorgris);
+    color: var(--colorazul);
+}
+
+h2 .accordion-button {
+    background-color: var(--colorclaro);
+    color: var(--colorgris);
+    font-size: large;
+    padding: 0.5rem;
+    display: flex;
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: var(--colorclaro);
+    color: var(--coloroscuro);
+}
+.accordion-body{
+    font-size: large;
+}
+
+.argentinaP{
+max-height: 70px;
+}

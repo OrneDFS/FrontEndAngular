@@ -1,0 +1,19 @@
+#proyectos{
+    background-image:url(../../../assets/img/Carrusel/pexels-eva-bronzini-7957724.jpg);
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-size: cover; 
+    
+ }
+
+ .proyectos{
+    position: relative;
+    background-color: var(--colorazul);
+    color:var(--colorclaro);
+    padding-bottom: 3em;
+}
+
+.proyectos .card{
+    background-color: transparent;
+    border: none;
+}

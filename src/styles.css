@@ -1,1 +1,243 @@
 /* You can add global styles to this file, and also import other style files */
+:root{
+    --colorclaro:#f1edd2 ;
+    --colorestridente:#fccf08;
+    --colorazul:#031026;
+    --colorgris:#b3adad;
+    --coloroscuro:#121822;
+    --colorgristopo: #41464b;
+    --colortranslucido: #30364dd9;
+    --colortranslucido2: #30364da2;
+    
+}
+/* portada */
+/* </portada */
+
+body {
+    background-color: var(--colorazul)!important;
+}
+
+body.fuente{
+    font-family: 'Comfortaa', cursive;
+}
+
+
+
+/* animación foto de perfil */
+
+  /* </animación foto de perfil */ 
+
+  /* Acerca de mí */
+
+h3 {
+font-size: 1.5em;
+color: var(--colorgris);
+}
+h4 {
+color: var(--colorazul);
+}
+
+#acercaDeMi{
+background-color: var(--colorazul);
+position: relative;
+padding-right: 0.5rem;
+}
+
+.card-body{
+background-color: var(--colorgristopo);
+font-size: large;
+margin: 15px;
+border-radius: 15px;
+}
+.edit {
+height: 15px;
+position: absolute;
+top: 25px;
+}
+
+/* experiencia */
+.experiencia {
+background-color: var(--colorclaro);
+position: relative;
+
+}
+#experiencia{
+background-position: center; 
+background-repeat: no-repeat; 
+background-size: cover; 
+padding-bottom: 1.5rem;
+}
+.filtro {
+height: 100%;
+width: 100%;
+background-color: var(--colortranslucido2);
+}
+.experiencia-titulo {
+font-size: 2.5em;
+color: var(--colorazul);
+margin: 0px 0 0 25px;
+padding-top: 3%;
+}
+.card-experiencia{
+color: var(--coloroscuro);
+}
+
+.subtituloExp{
+color: var(--coloroscuro);
+}
+#textoExperiencia{
+color: var(--coloroscuro);
+}
+
+.añadir {
+height: 15px;
+position: absolute;
+top: 25px;
+margin-right: 15px;
+}
+
+#empresas{
+background-color: var(--colorclaro);
+padding: 5px;
+}
+
+
+/* Formacion */
+.formacion {
+position: relative;
+color: var(--colorgris);
+/* padding-bottom: 15px; */
+}
+
+#formacion{
+background-position: center; 
+background-repeat: no-repeat; 
+background-size: cover; 
+}
+#accordion{
+margin: 2em;
+padding-bottom: 3em;
+}
+
+.accordion-item{
+background-color: var(--colorgris);
+color: var(--colorazul);
+} 
+
+#accordion div h2 button.accordion-button {
+background-color: var(--colorclaro);
+color: var(--colorgris);
+font-size: large;
+padding: 0.5rem;
+display: flex;
+}
+
+div h2 button .accordion-button:not(.collapsed) {
+background-color: var(--colorclaro);
+color: var(--coloroscuro);
+}
+#accordion .accordion-body{
+font-size: large;
+}
+
+.argentinaP{
+max-height: 70px;
+}
+
+/* Habilidades */
+.habilidades{
+position: relative;
+background-color: var(--colorazul);
+color:var(--colorclaro);
+}
+
+
+/* Carrusel */
+.carousel-item {
+height: 700px;
+width: auto;
+float: unset;
+margin: 5% 0;
+justify-content: center;
+}
+
+
+#carouselExampleIndicators{
+justify-content: center;
+}
+
+#carruselItem1{
+background-position: center; 
+background-repeat: no-repeat; 
+background-size: cover;
+height: 100%;
+width: auto;
+background-color: rgba(190, 184, 184, 0.288);
+}
+
+#carruselItem2{
+background-position: center; 
+background-repeat: no-repeat; 
+background-size: cover;
+height: 100%;
+width: auto;
+background-color: rgba(190, 184, 184, 0.288);
+}
+
+#carruselItem3{
+background-position: center; 
+background-repeat: no-repeat; 
+background-size: cover;
+height: 100%;
+width: auto;
+background-color: rgba(190, 184, 184, 0.288);
+}
+
+.carousel-caption {
+color: var(--colorgris);
+border-radius: 15px;
+text-align: center;
+font-size: large, bold;
+z-index: 2;
+background-color: var(--colortranslucido) ;
+align-items: center;
+}
+
+/* Proyectos */
+#proyectos{
+background-image:url(assets/img/Carrusel/pexels-eva-bronzini-7957724.jpg);
+background-position: center; 
+background-repeat: no-repeat; 
+background-size: cover; 
+
+}
+
+.proyectos{
+position: relative;
+background-color: var(--colorazul);
+color:var(--colorclaro);
+padding-bottom: 3em;
+}
+
+.proyectos .card{
+background-color: transparent;
+border: none;
+}
+
+/* contacto */
+#contacto{
+background-color: var(--colorclaro);
+background-position: center; 
+background-repeat: no-repeat; 
+background-size: cover; 
+}
+
+.contacto{
+position: relative;
+color:var(--colorgristopo);
+}
+
+#gracias{
+border-radius: 20px;
+margin-right: 5%;
+}

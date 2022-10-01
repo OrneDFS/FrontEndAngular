@@ -1,0 +1,25 @@
+h3 {
+    font-size: 1.5em;
+    color: var(--colorgris);
+}
+h4 {
+    color: var(--colorazul);
+}
+
+#acercaDeMi{
+    background-color: var(--colorazul);
+    position: relative;
+    padding-right: 0.5rem;
+    }
+
+.card-body{
+    background-color: var(--colorgristopo);
+    font-size: large;
+    margin: 15px;
+    border-radius: 15px;
+}
+ .edit {
+    height: 15px;
+    position: absolute;
+    top: 25px;
+}

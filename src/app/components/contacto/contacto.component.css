@@ -1,0 +1,11 @@
+#contacto{
+    background-color: var(--colorclaro);
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-size: cover; 
+ }
+
+ .contacto{
+    position: relative;
+    color:var(--colorgristopo);
+ }
