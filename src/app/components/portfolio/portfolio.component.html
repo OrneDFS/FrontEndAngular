@@ -1,17 +1,27 @@
-<app-navbar></app-navbar>
 
-<app-portada></app-portada>
+    <app-navbar></app-navbar>
+    
+    <app-loading *ngIf="loading"></app-loading>
 
-<app-acerca-de></app-acerca-de>
+    <div *ngIf="!loading">
+    
+        <app-portada></app-portada>
+        
+        <app-acerca-de></app-acerca-de>
+        
+        <app-experiencia></app-experiencia>
+        
+        <app-formacion></app-formacion>
+        
+        <app-habilidades></app-habilidades>
+        
+        <app-proyectos></app-proyectos>
+        
+        <app-gracia></app-gracia>
 
-<app-experiencia></app-experiencia>
+        <app-contacto></app-contacto>
 
-<app-formacion></app-formacion>
-
-<app-habilidades></app-habilidades>
-
-<app-proyectos></app-proyectos>
-
-<app-contacto></app-contacto>
-
-<app-footer></app-footer>
+    </div>
+    
+    <app-footer></app-footer>
+    

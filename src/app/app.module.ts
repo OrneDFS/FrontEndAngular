@@ -16,6 +16,8 @@ import { IniciarSesionComponent } from './components/iniciar-sesion/iniciar-sesi
 import { PortfolioComponent } from './components/portfolio/portfolio.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { LoadingComponent } from './components/loading/loading.component';
+import { GraciaComponent } from './components/gracia/gracia.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { HttpClientModule } from '@angular/common/http';
     ContactoComponent,
     FooterComponent,
     IniciarSesionComponent,
-    PortfolioComponent
+    PortfolioComponent,
+    LoadingComponent,
+    GraciaComponent
   ],
   imports: [
     BrowserModule,

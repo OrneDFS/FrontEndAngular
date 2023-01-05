@@ -9,6 +9,11 @@
     --colortranslucido: #30364dd9;
     --colortranslucido2: #30364da2;
     
+        --dur: 4s;
+        --bg: #f1edd2;
+        --fg: #cfaa45;
+        font-size: calc(12px + (24 - 12)*(100vw - 320px)/(2560 - 320));
+    
 }
 /* portada */
 /* </portada */

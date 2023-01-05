@@ -1,0 +1,34 @@
+
+
+    .wrapper{
+    background-color: var(--colorazul);
+    text-align: center;
+    /* border:5px dotted dimgrey; */
+    padding: 30px;
+    }
+    .wrapper .container{
+    color: var(--fg);
+    font-weight: bold;
+    font-size: 30px;
+    position: relative;
+    }
+    #no{
+    font-weight: bold;
+    color: var(--colorclaro);
+    position: relative;
+    height: 35px;
+    width: 70px;
+    background-color: #f80324;
+    font-size: 20px;
+    border-radius: 5px;
+    }
+    #si{
+    
+    font-weight: bold;
+    color: var(--colorclaro);
+    border-radius: 5px;
+    height: 35px;
+    width: 70px;
+    background: #0edf2e;
+    font-size: 20px;
+    }
