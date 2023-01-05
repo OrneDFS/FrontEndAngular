@@ -1,4 +1,4 @@
-formacion {
+.formacion {
     position: relative;
     color: var(--colorgris);
     /* padding-bottom: 15px; */
@@ -13,16 +13,21 @@ formacion {
 #accordion{
     margin: 2em;
     padding-bottom: 3em;
+    
+}
+#accordion div div h2 button.accordion-button {
+    color: var(--colorazul);
+    font:bold
 }
 
 .accordion-item{
     background-color: var(--colorgris);
-    color: var(--colorazul);
+    /* color: var(--colorazul); */
 }
 
 h2 .accordion-button {
     background-color: var(--colorclaro);
-    color: var(--colorgris);
+    color: var(--colorazul);
     font-size: large;
     padding: 0.5rem;
     display: flex;
@@ -34,6 +39,10 @@ h2 .accordion-button {
 }
 .accordion-body{
     font-size: large;
+}
+
+.accordion-body p strong {
+    color: var(--colorazul);
 }
 
 .argentinaP{

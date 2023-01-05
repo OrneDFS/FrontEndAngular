@@ -4,8 +4,19 @@
   <div class="p-2"> 
     <h3 class="card-title experiencia-titulo">Contacto</h3>
     <div class="d-flex justify-content-center align-items-center mb-4">
-      <h5 class="me-5">ornella.desarrolladorafs@gmail.com <br> Tel: 3512894982 <br> Córdoba, Argentina.</h5>
+      <section>
+        <h5 *ngIf="!modificable" class="me-5">{{datosMiPersona.correo}}</h5>
+        <textarea class="textarea" placeholder="Nombre"*ngIf="modificable" [(ngModel)]="datosMiPersona.correo"></textarea>
+        <h5 *ngIf="!modificable" class="me-5">Tel: {{datosMiPersona.whatsApp}}</h5>
+        <textarea class="textarea" placeholder="Nombre"*ngIf="modificable" [(ngModel)]="datosMiPersona.whatsApp"></textarea>
+        <h5 *ngIf="!modificable" class="me-5">{{datosMiPersona.lugardeResidencia}}</h5><textarea class="textarea" placeholder="Nombre"*ngIf="modificable" [(ngModel)]="datosMiPersona.lugardeResidencia"></textarea>
+      </section>
       <img src="../../../assets/img/Carrusel/pexels-monstera-5957128.jpg" class="w-25 " alt="..." id="gracias">
+    </div>
+    <div class="d-flex justify-content-end">
+      <a *ngIf="logueado" class="edit"> <img (click)="habilitarEdicion()" src="../../../assets/img/Iconos/editar.png" alt="edit" width="35" height="35" class="align-items-end">
+      </a>
+      <input *ngIf="modificable" class="btn btn-light"   type="submit" value="modificar" (click)="modificar()">
     </div>
   </div>
 </section>

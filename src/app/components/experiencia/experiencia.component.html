@@ -2,36 +2,56 @@
     <div > 
     <h3 class="card-title experiencia-titulo">Experiencia</h3>
     <div class="d-flex justify-content-end">
-      <a href="#" class="añadir"> <img src="../../../assets/img/Iconos/agregar.png" alt="Añadir" width="35" height="35" class="align-items-end"> </a>
+      <a *ngIf="logueado"  class="añadir"> <img  (click)="anadir()"  src="../../../assets/img/Iconos/agregar.png" alt="Añadir" width="35" height="35" class="align-items-end"> </a>
     </div>
-    <!-- Tandem -->
-    <div class="row g-0">
-      <div class="col-md-3 d-flex justify-content-center align-items-center" >
-        <img src="../../../assets/img/Logos/Logo Tandem.jpeg" class="img-fluid rounded" id="empresas" alt="Gupo Tandem BPO">
+
+    <div  class="row g-0" *ngFor="let expValArray of datosExperiencia">
+    
+    <!-- Tandem --> 
+      <!-- Logo empresa -->
+      <div class="col-md-3 d-flex justify-content-center align-items-center flex-column" >
+        <!-- SUBIR IMAGEN A UN DRIVE  Y CREAR ATRIBUTO "url iMAGEN EN B.E"-->
+        <!-- Reemplazar el src !^  - ver linea 16--a [href]="experiencia.urlempresa"-->
+        
+        <a [href]="expValArray.urlempresa" class="justify-content-center" > 
+          <img src="../../../assets/img/Logos/Logo Tandem.jpeg" class="img-fluid rounded" id="empresas" alt="Gupo Tandem BPO">
+          </a>
+          <p class="experiencia-subtitulo">{{expValArray.empresa}}</p>
+          
       </div>
 
-      <div class="col-md-9 pe-2 d-flex align-items-center ">
-
+      <!-- Body Experiencia -->
+      <div class="col-md-9 pe-2 d-flex align-items-center" >
         <div class="card-body experiencia p-3">
-          <h5 class="card-title subtituloExp">Formadora en Gestión Humana (Freelance)</h5>
-          <p class="card-text" id="textoExperiencia">This is a wider card with supporting text below as a natural
-            lead-in to additional content. This content is a little bit longer.
-            <a href="http://grupotandembpo.com"> Grupo Tandem BPO</a>
+          <!-- puesto -->
+          <h5 *ngIf="!modificable[expValArray.idTrabajos]" class="card-title subtituloExp" ><b>{{expValArray.puesto}}</b></h5>
+          <textarea class="textarea" placeholder="Puesto" *ngIf="modificable[expValArray.idTrabajos]" [(ngModel)]="expValArray.puesto"></textarea>
+          <!-- descripcion -->
+          <p *ngIf="!modificable[expValArray.idTrabajos]" class="card-text" id="textoExperiencia"> {{expValArray.descripcion}}
+            
           </p>
-          <p class="card-text"><small class="text-muted">Año: 2022</small></p>
+          <textarea class="textarea" placeholder="Descripcion"  *ngIf="modificable[expValArray.idTrabajos]" [(ngModel)]="expValArray.descripcion"></textarea>
+          <textarea class="textarea" placeholder="url de la Empresa"  *ngIf="modificable[expValArray.idTrabajos]" [(ngModel)]="expValArray.urlempresa"></textarea>
+          <textarea class="textarea" placeholder="Nombre de la compañía" *ngIf="modificable[expValArray.idTrabajos]" [(ngModel)]="expValArray.empresa"></textarea>
+          <!-- periodo -->
+          <p *ngIf="!modificable[expValArray.idTrabajos]" class="card-text"><small class="text-muted">{{expValArray.periodo}}</small></p>
+          <textarea class="textarea" placeholder="Periodo" *ngIf="modificable[expValArray.idTrabajos]" [(ngModel)]="expValArray.periodo"></textarea>
         </div >
-        <div class="d-flex justify-content-end ">
-          <a href="#" class=> <img src="../../../assets/img/Iconos/editar.png" alt="editar" width="35" height="33" class="align-items-end">
+        <!-- iconos -->
+      <div class="flex-column">
+        <div class="d-flex justify-content-end "> 
+          <a *ngIf="logueado" > <img  (click)="habilitarEdicion(expValArray.idTrabajos)" src="../../../assets/img/Iconos/editar.png" alt="editar" width="35" height="33" class="align-items-end">
+          </a>       
+          <a *ngIf="logueado"  > <img  (click)="eliminar(expValArray.idTrabajos)" src="../../../assets/img/Iconos/delete.png" alt="eliminar" width="35" height="37" class="align-items-end">
           </a>
-          <a href="#" class=> <img src="../../../assets/img/Iconos/delete.png" alt="eliminar" width="35" height="37" class="align-items-end">
-          </a>
-
         </div>
-
+        <input *ngIf="modificable[expValArray.idTrabajos]" class="btn btn-light"   type="submit" value="modificar" (click)="modificar(expValArray.idTrabajos)">
+      </div>
       </div>
     </div>
     <!-- Tandem -->
-    <!-- VN Global -->
+
+    <!-- VN Global 
     <div class="row g-0"> 
       <div class="col-md-3  d-flex justify-content-center align-items-center p-3" >
         <img src="https://www.v-n.com.ar/images/vn-logo.svg" class="img-fluid rounded " id="empresas"  alt="VN Global BPO" >
@@ -43,7 +63,7 @@
           <h5 class="card-title subtituloExp">Formadora en Gestión Humana (Freelance)</h5>
           <p class="card-text" id="textoExperiencia">This is a wider card with supporting text below as a natural
             lead-in to additional content. This content is a little bit longer.
-            <a href="http://grupotandembpo.com" >Grupo Tandem BPO</a>
+            <a href="http://grupotandembpo.com" ></a>
           </p>
 
           <p class="card-text"><small class="text-muted">Año: 2022</small></p>
@@ -58,8 +78,9 @@
 
       </div>
     </div>
-    <!-- VN Global -->
-    <!-- Atento Argentina -->
+    VN Global -->
+
+    <!-- Atento Argentina 
     <div class="row g-0">
       <div class="col-md-3 d-flex justify-content-center align-items-center p-3">
         <img src="https://atento.com/wp-content/uploads/2021/01/logo-atento.png" class="img-fluid rounded" id="empresas" alt="Atento">
@@ -86,6 +107,8 @@
 
       </div>
     </div>
-    <!-- Atento Argentina -->
+    Atento Argentina -->
+
+
   </div>
   </section>

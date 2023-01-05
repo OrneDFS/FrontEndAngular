@@ -2,34 +2,47 @@
     <div class="filtro">
           <h3 class="card-title experiencia-titulo formacion">Formación</h3>
           <div class="d-flex justify-content-end">
-            <a href="#" class="añadir"> <img src="../../../assets/img/Iconos/agregar.png" alt="Añadir" width="35" height="35"
+            <a *ngIf="logueado"  class="añadir"> <img  (click)="anadir()" src="../../../assets/img/Iconos/agregar.png" alt="Añadir" width="35" height="35"
                 class="align-items-end"> </a>
           </div>
-    
-     <div>
+   <!-- Acordeon -->
+     <div id="accordion">
+      <!-- Acordeon -->
+      <!-- título -->
       <div class="accordion" id="accordionPanelsStayOpenExample">
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="panelsStayOpen-headingOne">
-            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="false" aria-controls="panelsStayOpen-collapseOne">
-              <strong> Desarrollador Web Full Stack / Curso de Inglés para Desarrolladores </strong>
+        <div *ngFor="let estValArray of datosFormacion" class="accordion-item">
+          <h2  class="accordion-header" id="panelsStayOpen-headingOne">
+            <button class="d-flex justify-content-end accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="false" aria-controls="panelsStayOpen-collapseOne">
+              <strong *ngIf="!modificable[estValArray.id]"> {{estValArray.titulo}}</strong>
+              <textarea class="textarea" placeholder="Titulo" *ngIf="modificable[estValArray.id]" [(ngModel)]="estValArray.titulo"></textarea>
             </button>
           </h2>
+          <!-- Cuerpo -->
           <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
-            <div class="accordion-body">
-              <strong> Argentina Programa - Ministerio de Desarrollo Productivo</strong> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.<code>.accordion-body</code>, though the transition does limit overflow.
+            <div class="accordion-body">  
+              <p><strong> {{estValArray.institucion}}</strong></p> 
+              <p>{{estValArray.descripcion}}</p>
+              <!-- iconos -->
+              <div class="flex-column">
               <div class="d-flex justify-content-end">
-                <a href="#" class=> <img src="../../../assets/img/Iconos/editar.png" alt="editar" width="35" height="33" class="align-items-end">
-                </a>
-                <a href="#" class=> <img src="../../../assets/img/Iconos/delete.png" alt="eliminar" width="35" height="37" class="align-items-end">
-                </a>
-                </div>
-              <div >
+                <textarea class="textarea"placeholder="Nombre de la Institucion" *ngIf="modificable[estValArray.id]" [(ngModel)]="estValArray.institucion"></textarea>
+                <textarea class="textarea"placeholder="Descripcion" *ngIf="modificable[estValArray.id]" [(ngModel)]="estValArray.descripcion"></textarea>
+                <a *ngIf="logueado"  > <img  (click)="habilitarEdicion(estValArray.id)" src="../../../assets/img/Iconos/editar.png" alt="editar" width="35" height="33" class="align-items-end">
+              </a>
+              <a *ngIf="logueado" > <img  (click)="eliminar(estValArray.id)" src="../../../assets/img/Iconos/delete.png" alt="eliminar" width="35" height="37" class="align-items-end">
+              </a>
+            </div>
+            </div>
+            <input *ngIf="modificable[estValArray.id]" class="btn btn-light"   type="submit" value="modificar" (click)="modificar(estValArray.id)">
+           <div >       
+            <!-- SUBIR IMAGEN A UN DRIVE  Y CREAR ATRIBUTO "url iMAGEN EN B.E"-->
+        <!-- Reemplazar el src !^  - ver linea 16 de experiencia.component--a [href]="experiencia.urlempresa"-->                   
                 <img src="../../../assets/img/Logos/APLogo-20-20.png" class="img-fluid justify-content-center argentinaP" alt="ISEP">
               </div>
             </div>
           </div>
         </div>
-        <div class="accordion-item">
+        <!-- <div class="accordion-item">
           <h2 class="accordion-header" id="panelsStayOpen-headingOne">
             <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="true" aria-controls="panelsStayOpen-collapseTwo">
               <strong> Seminario de Narrativas Hipermediales </strong>
@@ -91,7 +104,7 @@
               </div>
             </div>
           </div>
-        </div>
+        </div> -->
         
       </div>
     </div>

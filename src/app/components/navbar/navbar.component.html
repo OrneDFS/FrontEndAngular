@@ -38,10 +38,11 @@
         </div>
         <!-- Navbar login   -->
         <div class="d-flex align-items-end justify-content-end border-start ps-1">
-          <a href="#" class="login"> <img src="assets/img/Iconos/log-in.png" alt="Login" width="75" height="64"
+          <a routerLink="/iniciar-sesion" *ngIf="!logueado" class="login"> <img src="assets/img/Iconos/log-in.png" alt="Login"  width="75" height="64"
               class="d-inline-block align-text-top m-0"> </a>
-          <a href="#" class="login"> <img src="assets/img/Iconos/log-out.png" alt="Logout" width="55" height="44"
+          <a routerLink="/" (click)="logOut()" *ngIf="logueado" class="login"> <img src="assets/img/Iconos/log-out.png" alt="Logout"  width="55" height="44"
               class="d-inline-block align-text-top m-0"> </a>
+              <p></p>
         </div>
       </div>
     </div>

@@ -1,20 +1,22 @@
 <div class="card" id="acercaDeMi">
     <div class="card-body">
-      <h3 class="card-title">Ornella Alborno</h3>
+      <h3 *ngIf="!modificable" class="card-title">{{datosMiPersona.nombre+" "+datosMiPersona.apellido}}</h3>
+      <textarea class="textarea" placeholder="Nombre"*ngIf="modificable" [(ngModel)]="datosMiPersona.nombre"></textarea>
+      <textarea class="textarea"placeholder="Apellido" *ngIf="modificable" [(ngModel)]="datosMiPersona.apellido"></textarea>
+
       <div class="d-flex justify-content-end">
-        <a href="#" class="edit"> <img src="../../../assets/img/Iconos/editar.png" alt="edit" width="35" height="35" class="align-items-end">
+        <a *ngIf="logueado" class="edit"> <img (click)="habilitarEdicion()" src="../../../assets/img/Iconos/editar.png" alt="edit" width="35" height="35" class="align-items-end">
         </a>
       </div>
 
-      <h4 class="card-subtitle mb-2">Full Stack Developer Jr.</h4>
-      <p class="card-text">Soy tucumana pero vivo en Córdoba hace varios años.
-        También soy docente de primaria, con una especialización en Pensamiento Computacional y Narrativas
-        Hipermediales.
-        <br>
-        Busco incorporarme al sector de software y especializarme en el desarrollo de aplicaciones, principalmente en el
-        area de FronEnd.
-      </p>
+      <h4 class="card-subtitle mb-2"> <strong>Full Stack Developer Jr.</strong></h4>
+      <p *ngIf="!modificable" class="card-text">{{datosMiPersona.descripcion}}</p>
       <!-- <a href="#" class="card-link">Card link</a> -->
     </div>
+    <div *ngIf="modificable" class="d-flex justify-content-center align-items-center"> 
+      <textarea class="textarea"  placeholder="Descripcion" class="card-text textarea" [(ngModel)]="datosMiPersona.descripcion"></textarea>
+      <input class="btn btn-light"   type="submit" value="modificar" (click)="modificar()">
+    </div>
   </div>
+
 

@@ -1,15 +1,66 @@
 import { Component, OnInit } from '@angular/core';
+import { PortfolioService } from 'src/app/servicios/portfolio.service';
 
 @Component({
   selector: 'app-formacion',
   templateUrl: './formacion.component.html',
   styleUrls: ['./formacion.component.css']
 })
+
 export class FormacionComponent implements OnInit {
 
-  constructor() { }
+  datosFormacion:any="";
+  modificable: boolean[]=[];
+  logueado: boolean=false;
+  formacion:any={
+    "id":1,
+    "institucion": "eso",
+    "periodo": "lalalalal",
+    "titulo": "titulo",
+    "descripcion": "descripcion",
+    "enlace": "enlace",
+    "persona": {
+      "id": 4
+      }
+        }
+
+
+  constructor(private datosPortfolio:PortfolioService) { }
 
   ngOnInit(): void {
+    this.datosPortfolio.verEstudio().subscribe(data=>{
+      this.datosFormacion = data;
+      console.log(this.datosFormacion);
+    })
   }
 
+  habilitarEdicion(id :number){
+    if(this.modificable[id]===true) {
+      this.modificable[id]= false;
+    } else {this.modificable[id] = true;
+    }
+  }
+  
+  anadir(){
+    let nuevo=this.formacion;
+    this.datosFormacion.push(this.datosPortfolio.nuevoEstudio(nuevo));
+    alert("El Registro fue añadido");
+    location.reload();
+  }
+
+  modificar(id:number){ 
+  for(let formacion of this.datosFormacion){
+  if(formacion.id===id){
+    this.datosPortfolio.editarEstudio(formacion);
+     }
+    }
+    alert("El registro fue Modificado");
+   this.modificable[id]=false;
+  }
+
+  eliminar(id:number){
+    this.datosPortfolio.eliminarEstudios(id);
+    alert("El registro fue eliminado");
+    location.reload();
+  }
 }
