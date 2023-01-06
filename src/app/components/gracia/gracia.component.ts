@@ -16,7 +16,7 @@ export class GraciaComponent implements OnInit {
     mensaje(){
       let si= document.getElementById("question");
       if(si!==null){
-      si.innerHTML ="Me parece una excelente decisión";
+      si.innerHTML ="Es una excelente decisión";
     console.log("diste clic en 'si' ")}
   }
 

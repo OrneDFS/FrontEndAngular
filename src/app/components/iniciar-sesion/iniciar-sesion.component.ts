@@ -12,8 +12,11 @@ import { AutenticacionService } from 'src/app/servicios/autenticacion.service';
 export class IniciarSesionComponent implements OnInit {
   form:FormGroup;
   
+
+  // corsico 1 min 14.35
   constructor(private formBuilder:FormBuilder, private autenticacionService: AutenticacionService, private ruta: Router) { 
 
+  
     this.form = this.formBuilder.group(
         { 
           email:['',[Validators.required, Validators.email]],
@@ -26,9 +29,16 @@ export class IniciarSesionComponent implements OnInit {
         })
     }
 
+          // ver corsico ^ min 15.57
+
+          // fin  corsico 1 min 17.50
+
+
+
+
     ngOnInit(): void {
     }
-
+// corsico 2 min 18
     get Email()
     {
       return this.form.get('email');
@@ -38,6 +48,11 @@ export class IniciarSesionComponent implements OnInit {
     {
       return this.form.get('password');
     }
+
+    // fin corsico 2 min 19.30 
+
+    // corsico 3 min 33
+
     onEnviar(event:Event){
       event.preventDefault;
       this.autenticacionService.iniciarSession(this.form.value).subscribe(data=>{
@@ -45,5 +60,6 @@ export class IniciarSesionComponent implements OnInit {
         this.ruta.navigate(['/portfolio']);
       })
     }
+     // fin corsico 3 min 35.3
 
 }  

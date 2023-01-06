@@ -1,11 +1,16 @@
+<!-- Corsico 2 - hasta min 5.30 Master class-->
+
 <div class="card-body p-5">
     <h1 class="mb-5">Iniciar Sesión</h1>
+
+    <!-- Corsico 1 - hasta min 4 Master class-->
     <form [formGroup]="form" class="campos" (ngSubmit)="onEnviar($event)">
         <div class="mb-5">
             <label for="exampleInputEmail1" class="form-label">Email</label>
             <input type="email" formControlName="email" 
             [ngClass]="{'is-invalid border border-danger border-4': Email?.errors && Email?.touched, 'is-valid':!Email?.errors && Email?.touched}"
             class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" >
+            <!-- Corsico 3  colores form -->
                 <div *ngIf="Email?.errors && Email?.touched">
                     <p *ngIf="Email?.hasError('required')" class="text-danger">
                         El email es requerido.
@@ -14,12 +19,18 @@
                         El formato del email debe ser válido.
                     </p>
                 </div>  
+            <!-- /Corsico 3-->
+
+            <!-- Corsico 1 -->
         </div>
         <div class="mb-3">
             <label for="exampleInputPassword1" class="form-label">Constraseña</label>
-            <input type="password" formControlName="password" 
+            <input type="password" 
+            formControlName="password" 
             [ngClass]="{'is-invalid border border-danger border-4': Password?.errors && Password?.touched, 'is-valid':!Password?.errors && Password?.touched}"
             class="form-control" id="exampleInputPassword1">
+            
+                <!-- Corsico 3 - colores form -->
                 <div *ngIf="Password?.errors && Password?.touched">
                     <p *ngIf="Password?.hasError('required')" class="text-danger">
                         La contraseña es requerida.
@@ -28,6 +39,7 @@
                        La contraseña ingresada es inválida.
                     </p>
                 </div>         
+                 <!-- /Corsico 3-->
         </div>
         <button type="submit" class="btn btn-primary">Enviar</button>
     </form>

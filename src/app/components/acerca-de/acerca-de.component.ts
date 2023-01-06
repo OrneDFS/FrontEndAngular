@@ -12,8 +12,23 @@ export class AcercaDeComponent implements OnInit {
   modificable: boolean=false;
   logueado: boolean=false;
 
+  // Corsico min 44.50
+//miPortfolio: any;
+ //falta agregar algo al constructor creo
+ // Ver cuerpo del ngOnInit
+
 
   constructor(private datosPortfolio:PortfolioService) { }
+
+// Corsico min 44.50 sigue
+
+  // ngOnInit(): void {
+  //   this.datosPortfolio.obtenerdatos().subscribe(data=>{
+  //     console.log("Datos Personales" + JSON.stringify(data));
+  //     this.miPortfolio=data[0];
+  //   });
+  // }
+
 
   ngOnInit(): void {
     this.datosPortfolio.verPersona().subscribe(data=>{

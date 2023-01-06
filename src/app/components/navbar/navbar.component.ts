@@ -7,14 +7,14 @@ import { AutenticacionService } from 'src/app/servicios/autenticacion.service' ;
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css']
 })
+
 export class NavbarComponent implements OnInit {
 
   logueado: boolean =this.auth.logIn;
 
   constructor(private auth:AutenticacionService) { }
-
-  ngOnInit(): void {
-  }
+ 
+  ngOnInit(): void {}
 
   logOut(): void {
     this.auth.logOut();

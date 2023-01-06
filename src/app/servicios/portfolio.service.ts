@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 })
 
 export class PortfolioService {
-  url: string = 'http://localhost:8080';
+  url: string = 'http://localhost:8080'; // acá va a ir la url de la API
 
   constructor( private http:HttpClient) {}
 
@@ -16,7 +16,7 @@ export class PortfolioService {
   //Metodos Persona 
     verPersona():Observable<any>
       {
-      return this.http.get(this.url+"/persona/ver/4");  
+      return this.http.get(this.url+"/persona/ver/4");  // revisar esto en el min 38 cuando ponga la API
     }
 
 

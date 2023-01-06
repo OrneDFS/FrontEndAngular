@@ -15,9 +15,11 @@ import { FooterComponent } from './components/footer/footer.component';
 import { IniciarSesionComponent } from './components/iniciar-sesion/iniciar-sesion.component';
 import { PortfolioComponent } from './components/portfolio/portfolio.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { LoadingComponent } from './components/loading/loading.component';
 import { GraciaComponent } from './components/gracia/gracia.component';
+import { PortfolioService } from './servicios/portfolio.service';
+import { InterceptorService } from './servicios/interceptor.service';
 
 @NgModule({
   declarations: [
@@ -43,7 +45,13 @@ import { GraciaComponent } from './components/gracia/gracia.component';
     HttpClientModule,
     FormsModule
   ],
-  providers: [],
+
+  // corsico min 42
+  providers: [PortfolioService,
+    {
+    provide: HTTP_INTERCEPTORS, useClass: InterceptorService, multi: true
+    }
+],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
