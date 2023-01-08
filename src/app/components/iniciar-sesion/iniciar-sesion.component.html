@@ -7,16 +7,13 @@
     <form [formGroup]="form" class="campos" (ngSubmit)="onEnviar($event)">
         <div class="mb-5">
             <label for="exampleInputEmail1" class="form-label">Email</label>
-            <input type="email" formControlName="email" 
-            [ngClass]="{'is-invalid border border-danger border-4': Email?.errors && Email?.touched, 'is-valid':!Email?.errors && Email?.touched}"
+            <input type="text" formControlName="nombreUsuario" 
+            [ngClass]="{'is-invalid border border-danger border-4': NombreUsuario?.errors && NombreUsuario?.touched, 'is-valid':!NombreUsuario?.errors && NombreUsuario?.touched}"
             class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" >
             <!-- Corsico 3  colores form -->
-                <div *ngIf="Email?.errors && Email?.touched">
-                    <p *ngIf="Email?.hasError('required')" class="text-danger">
-                        El email es requerido.
-                    </p>
-                    <p *ngIf="Email?.hasError('Email')" class="text-danger">
-                        El formato del email debe ser válido.
+                <div *ngIf="NombreUsuario?.errors && NombreUsuario?.touched">
+                    <p *ngIf="NombreUsuario?.hasError('required')" class="text-danger">
+                        El NombreUsuario es requerido.
                     </p>
                 </div>  
             <!-- /Corsico 3-->

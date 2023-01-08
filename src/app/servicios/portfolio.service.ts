@@ -16,12 +16,12 @@ export class PortfolioService {
   //Metodos Persona 
     verPersona():Observable<any>
       {
-      return this.http.get(this.url+"/persona/ver/4");  // revisar esto en el min 38 cuando ponga la API
+      return this.http.get(this.url+"/persona/ver/2");  // revisar esto en el min 38 cuando ponga la API
     }
 
 
     editarPersona( persona:any ){
-      this.http.put(this.url+"/persona/editar", persona).subscribe();
+      this.http.put( this.url+"/persona/editar", persona).subscribe();
     }
  
   //Metodos de experiencia

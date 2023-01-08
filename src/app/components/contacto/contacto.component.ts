@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AutenticacionService } from 'src/app/servicios/autenticacion.service';
 import { PortfolioService } from 'src/app/servicios/portfolio.service';
 
 @Component({
@@ -10,9 +11,9 @@ export class ContactoComponent implements OnInit {
 
   datosMiPersona: any="";
   modificable: boolean=false;
-  logueado: boolean=false;
+  logueado: boolean=this.auth.logIn;
 
-  constructor(private datosPortfolio:PortfolioService) { }
+  constructor(private datosPortfolio:PortfolioService, private auth:AutenticacionService) { }
 
   ngOnInit(): void {
     this.datosPortfolio.verPersona().subscribe(data=>{

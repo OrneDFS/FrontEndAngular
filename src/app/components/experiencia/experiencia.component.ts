@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AutenticacionService } from 'src/app/servicios/autenticacion.service';
 import { PortfolioService } from 'src/app/servicios/portfolio.service';
 
 @Component({
@@ -10,21 +11,21 @@ export class ExperienciaComponent implements OnInit {
 
   datosExperiencia:any="";
   modificable: boolean[]=[];
-  logueado: boolean=false;
+  logueado: boolean=this.auth.logIn;
   experiencia:any={
       "idTrabajos": 2,
-      "empresa": "VNGlobal",
-      "periodo": "Año 2022",
-      "puesto":"Capa",
-      "descripcion":"ads",
-      "urlempresa":"https://aafdfsf",
+      "empresa": "",
+      "periodo": "",
+      "puesto":"",
+      "descripcion":"",
+      "urlempresa":"",
       "persona": {
-              "id": 4
+              "id": 2
               }
   }
   
 
-  constructor(private datosPortfolio:PortfolioService) {}
+  constructor(private datosPortfolio:PortfolioService, private auth:AutenticacionService) {}
 
   ngOnInit(): void {
     this.datosPortfolio.verTrabajos().subscribe(data => {

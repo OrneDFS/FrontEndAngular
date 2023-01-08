@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AutenticacionService } from 'src/app/servicios/autenticacion.service';
 import { PortfolioService } from 'src/app/servicios/portfolio.service';
 
 @Component({
@@ -11,21 +12,21 @@ export class FormacionComponent implements OnInit {
 
   datosFormacion:any="";
   modificable: boolean[]=[];
-  logueado: boolean=false;
+  logueado: boolean=this.auth.logIn;
   formacion:any={
     "id":1,
-    "institucion": "eso",
-    "periodo": "lalalalal",
-    "titulo": "titulo",
-    "descripcion": "descripcion",
-    "enlace": "enlace",
+    "institucion": "",
+    "periodo": "",
+    "titulo": "",
+    "descripcion": "",
+    "enlace": "",
     "persona": {
-      "id": 4
+      "id": 2
       }
         }
 
 
-  constructor(private datosPortfolio:PortfolioService) { }
+  constructor(private datosPortfolio:PortfolioService, private auth:AutenticacionService) { }
 
   ngOnInit(): void {
     this.datosPortfolio.verEstudio().subscribe(data=>{

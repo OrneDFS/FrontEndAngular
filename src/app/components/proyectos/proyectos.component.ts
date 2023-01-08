@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AutenticacionService } from 'src/app/servicios/autenticacion.service';
 import { PortfolioService } from 'src/app/servicios/portfolio.service';
 
 
@@ -12,18 +13,18 @@ export class ProyectosComponent implements OnInit {
 
   datosProyectos:any="";
   modificable: boolean[]=[];
-  logueado: boolean=false;
+  logueado: boolean=this.auth.logIn;
   proyectos:any= {
  
     "id": 1,
-    "titulo": "Este Portafolio Web",
-    "descripcion": "lalalalal",
+    "titulo": "",
+    "descripcion": "",
     "urlProy": "https://zaraza.com",
     "persona": {
-            "id": 4
+            "id": 2
             }
           }
-    constructor(private datosPortfolio:PortfolioService) { }
+    constructor(private datosPortfolio:PortfolioService, private auth:AutenticacionService) { }
 
     ngOnInit(): void {
     this.datosPortfolio.verProyecto().subscribe(data=>{

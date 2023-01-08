@@ -11,6 +11,8 @@ import { AutenticacionService } from 'src/app/servicios/autenticacion.service';
 
 export class IniciarSesionComponent implements OnInit {
   form:FormGroup;
+  nombreUsuario='';
+  password= '';
   
 
   // corsico 1 min 14.35
@@ -19,13 +21,14 @@ export class IniciarSesionComponent implements OnInit {
   
     this.form = this.formBuilder.group(
         { 
-          email:['',[Validators.required, Validators.email]],
-          password:['',[Validators.required, Validators.minLength(8)]],
-          deviceInfo:this.formBuilder.group({
+          nombreUsuario:['',[Validators.required]], //, Validators.email
+          password:['',[Validators.required, Validators.minLength(8)]]
+          
+          /*deviceInfo:this.formBuilder.group({
             deviveId:["17867868768"],
             deviceType:["DEVICE_TYPE_ANDROID"],
             notificationToken:["123456789"]
-           })
+           })*/
         })
     }
 
@@ -39,9 +42,9 @@ export class IniciarSesionComponent implements OnInit {
     ngOnInit(): void {
     }
 // corsico 2 min 18
-    get Email()
+    get NombreUsuario()
     {
-      return this.form.get('email');
+      return this.form.get('nombreUsuario');
     }
 
     get Password()
@@ -55,10 +58,16 @@ export class IniciarSesionComponent implements OnInit {
 
     onEnviar(event:Event){
       event.preventDefault;
+      if(this.form.valid){
       this.autenticacionService.iniciarSession(this.form.value).subscribe(data=>{
-        console.log("DATA:" + JSON.stringify(data));
+        // console.log("DATA:" + JSON.stringify(data));
         this.ruta.navigate(['/portfolio']);
+      
       })
+    }
+    else{
+      this.form.markAllAsTouched();
+    }
     }
      // fin corsico 3 min 35.3
 

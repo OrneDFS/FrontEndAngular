@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
 // corsico 1 --  28 min hasta 33
 
 export class AutenticacionService {
-url="http://localhost:8080/iniciar-sesion"; // modificar despues con la url real 
+url="http://localhost:8080/auth"; // modificar despues con la url real 
 
 currentUsersubject: BehaviorSubject<any>;
 
@@ -23,8 +23,7 @@ constructor(private http:HttpClient, private router:Router) {
   }
 
   iniciarSession(credenciales:any): Observable<any> {
-    console.log("[] servicio de autenticacion corriendo mas...");
-    return this.http.post(this.url, credenciales).pipe(map(data=>{
+    return this.http.post(this.url + "/login", credenciales).pipe(map(data=>{
       sessionStorage.setItem('currentUser',JSON.stringify(data));
       this.currentUsersubject.next(data);
       return data;

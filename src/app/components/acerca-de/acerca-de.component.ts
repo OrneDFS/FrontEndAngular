@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AutenticacionService } from 'src/app/servicios/autenticacion.service';
 import { PortfolioService } from 'src/app/servicios/portfolio.service';
 
 @Component({
@@ -10,7 +11,8 @@ export class AcercaDeComponent implements OnInit {
 
   datosMiPersona: any="";
   modificable: boolean=false;
-  logueado: boolean=false;
+  // logueado: boolean=false;
+  logueado: boolean =this.auth.logIn;
 
   // Corsico min 44.50
 //miPortfolio: any;
@@ -18,7 +20,7 @@ export class AcercaDeComponent implements OnInit {
  // Ver cuerpo del ngOnInit
 
 
-  constructor(private datosPortfolio:PortfolioService) { }
+  constructor(private datosPortfolio:PortfolioService, private auth:AutenticacionService) { }
 
 // Corsico min 44.50 sigue
 
