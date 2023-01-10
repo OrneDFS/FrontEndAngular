@@ -13,7 +13,7 @@
         <textarea class="textarea" placeholder="Titulo" *ngIf="modificable[proyValArray.id]" [(ngModel)]="proyValArray.titulo"></textarea>
         <p class="card-text">{{proyValArray.descripcion}}</p>
         <textarea class="textarea"placeholder="Descripcion" *ngIf="modificable[proyValArray.id]" [(ngModel)]="proyValArray.descripcion"></textarea>
-        <a href={{proyValArray.url_proy}} class="card-link">Navegar</a>
+        <a [href]="proyValArray.urlProy" class="card-link">Navegar</a>
         <textarea class="textarea"placeholder="Url del Proyecto" *ngIf="modificable[proyValArray.id]" [(ngModel)]="proyValArray.url_proy"></textarea>
       <!-- iconos -->
         <div class="flex-column">

@@ -13,14 +13,14 @@ export class ExperienciaComponent implements OnInit {
   modificable: boolean[]=[];
   logueado: boolean=this.auth.logIn;
   experiencia:any={
-      "idTrabajos": 2,
+      "idTrabajos":"",
       "empresa": "",
       "periodo": "",
       "puesto":"",
       "descripcion":"",
       "urlempresa":"",
       "persona": {
-              "id": 2
+              "id": 1
               }
   }
   
@@ -63,3 +63,4 @@ export class ExperienciaComponent implements OnInit {
     location.reload();
   }
 }
+

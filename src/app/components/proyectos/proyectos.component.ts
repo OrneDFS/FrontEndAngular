@@ -16,12 +16,12 @@ export class ProyectosComponent implements OnInit {
   logueado: boolean=this.auth.logIn;
   proyectos:any= {
  
-    "id": 1,
+    "id": "",
     "titulo": "",
     "descripcion": "",
     "urlProy": "https://zaraza.com",
     "persona": {
-            "id": 2
+            "id": 1
             }
           }
     constructor(private datosPortfolio:PortfolioService, private auth:AutenticacionService) { }

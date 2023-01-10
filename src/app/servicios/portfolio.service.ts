@@ -16,7 +16,7 @@ export class PortfolioService {
   //Metodos Persona 
     verPersona():Observable<any>
       {
-      return this.http.get(this.url+"/persona/ver/2");  // revisar esto en el min 38 cuando ponga la API
+      return this.http.get(this.url+"/persona/ver/1");  // revisar esto en el min 38 cuando ponga la API
     }
 
 

@@ -6,14 +6,14 @@
     <!-- Corsico 1 - hasta min 4 Master class-->
     <form [formGroup]="form" class="campos" (ngSubmit)="onEnviar($event)">
         <div class="mb-5">
-            <label for="exampleInputEmail1" class="form-label">Email</label>
+            <label for="exampleInputEmail1" class="form-label">Usuario</label>
             <input type="text" formControlName="nombreUsuario" 
             [ngClass]="{'is-invalid border border-danger border-4': NombreUsuario?.errors && NombreUsuario?.touched, 'is-valid':!NombreUsuario?.errors && NombreUsuario?.touched}"
             class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" >
             <!-- Corsico 3  colores form -->
                 <div *ngIf="NombreUsuario?.errors && NombreUsuario?.touched">
                     <p *ngIf="NombreUsuario?.hasError('required')" class="text-danger">
-                        El NombreUsuario es requerido.
+                        El Nombre de Usuario es requerido.
                     </p>
                 </div>  
             <!-- /Corsico 3-->
@@ -33,7 +33,7 @@
                         La contraseña es requerida.
                     </p>
                     <p *ngIf="Password?.errors?.['minLength']" class="text-danger">
-                       La contraseña ingresada es inválida.
+                       La contraseña ingresada tiene extensión inválida.
                     </p>
                 </div>         
                  <!-- /Corsico 3-->

@@ -11,11 +11,11 @@
       <!-- Logo empresa -->
       <div class="col-md-3 d-flex justify-content-center align-items-center flex-column" >
         <!-- SUBIR IMAGEN A UN DRIVE  Y CREAR ATRIBUTO "url iMAGEN EN B.E"-->
-        <!-- Reemplazar el src !^  - ver linea 16--a [href]="experiencia.urlempresa"-->
+        <!-- Reemplazar el src !^  - ver linea 16--a [href]="experiencia.urlLogoEmpresa"-->
         
-        <a [href]="expValArray.urlempresa" class="justify-content-center" > 
-          <img src="../../../assets/img/Logos/Logo Tandem.jpeg" class="img-fluid rounded" id="empresas" alt="Gupo Tandem BPO">
-          </a>
+        <div class="justify-content-center" > 
+          <img [src]="expValArray.urlLogoEmpresa" class="img-fluid rounded" id="empresas" alt="Img_Empresa">
+        </div>
           <p class="experiencia-subtitulo">{{expValArray.empresa}}</p>
           
       </div>
@@ -31,7 +31,7 @@
             
           </p>
           <textarea class="textarea" placeholder="Descripcion"  *ngIf="modificable[expValArray.idTrabajos]" [(ngModel)]="expValArray.descripcion"></textarea>
-          <textarea class="textarea" placeholder="url de la Empresa"  *ngIf="modificable[expValArray.idTrabajos]" [(ngModel)]="expValArray.urlempresa"></textarea>
+          <textarea class="textarea" placeholder="url Logo de la Empresa"  *ngIf="modificable[expValArray.idTrabajos]" [(ngModel)]="expValArray.urlLogoEmpresa"></textarea>
           <textarea class="textarea" placeholder="Nombre de la compañía" *ngIf="modificable[expValArray.idTrabajos]" [(ngModel)]="expValArray.empresa"></textarea>
           <!-- periodo -->
           <p *ngIf="!modificable[expValArray.idTrabajos]" class="card-text"><small class="text-muted">{{expValArray.periodo}}</small></p>
@@ -112,3 +112,4 @@
 
   </div>
   </section>
+

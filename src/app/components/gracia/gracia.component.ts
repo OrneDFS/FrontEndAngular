@@ -22,8 +22,8 @@ export class GraciaComponent implements OnInit {
 
    escapismo(){
     let no= document.getElementById("no");
-    let randomx= Math.random()*200+"px";
-    let randomy= Math.random()*100+"px";
+    let randomx= Math.random()*250+"px";
+    let randomy= (-100+ Math.random()*250)+"px";
 
     if(no!==null){
 

@@ -5,8 +5,8 @@ import { PortfolioComponent } from './components/portfolio/portfolio.component';
 import { GuardGuard } from './servicios/guard.guard';
 
 const routes: Routes = [
-  {path: 'portfolio', component:PortfolioComponent}, // , canActivate: [GuardGuard] sugiere corsico para que la url no sea visible para cualquiera. -- Al ahacerlo no se vio más mi website
-  {path: '',redirectTo: 'portfolio',pathMatch: 'full'} , 
+  {path: '', component:PortfolioComponent}, // , canActivate: [GuardGuard] sugiere corsico para que la url no sea visible para cualquiera. -- Al ahacerlo no se vio más mi website
+  {path: 'portfolio',redirectTo: '',pathMatch: 'full'} , 
   {path: 'iniciar-sesion', component: IniciarSesionComponent }
   ]
 

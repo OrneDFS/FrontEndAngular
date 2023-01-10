@@ -14,14 +14,14 @@ export class FormacionComponent implements OnInit {
   modificable: boolean[]=[];
   logueado: boolean=this.auth.logIn;
   formacion:any={
-    "id":1,
+    "id":"",
     "institucion": "",
     "periodo": "",
     "titulo": "",
     "descripcion": "",
     "enlace": "",
     "persona": {
-      "id": 2
+      "id": 1
       }
         }
 
