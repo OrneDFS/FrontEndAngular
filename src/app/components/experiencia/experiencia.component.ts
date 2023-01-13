@@ -29,7 +29,8 @@ export class ExperienciaComponent implements OnInit {
 
   ngOnInit(): void {
     this.datosPortfolio.verTrabajos().subscribe(data => {
-      this.datosExperiencia=data;      
+      this.datosExperiencia=data;  
+      this.prepararDatos();    
     })
   }
 
@@ -62,5 +63,12 @@ export class ExperienciaComponent implements OnInit {
     alert("El registro fue eliminado");
     location.reload();
   }
+
+  prepararDatos() {
+
+    this.datosExperiencia[0].descripcion=this.datosExperiencia[0].descripcion.split("\n").join("<br />");
+ 
+  }
+
 }
 

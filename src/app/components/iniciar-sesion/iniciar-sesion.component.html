@@ -1,4 +1,4 @@
-<!-- Corsico 2 - hasta min 5.30 Master class-->
+
 
 <div class="card-body p-5">
     <h1 class="mb-5">Iniciar Sesión</h1>
@@ -10,15 +10,12 @@
             <input type="text" formControlName="nombreUsuario" 
             [ngClass]="{'is-invalid border border-danger border-4': NombreUsuario?.errors && NombreUsuario?.touched, 'is-valid':!NombreUsuario?.errors && NombreUsuario?.touched}"
             class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" >
-            <!-- Corsico 3  colores form -->
+            <!-- colores form -->
                 <div *ngIf="NombreUsuario?.errors && NombreUsuario?.touched">
                     <p *ngIf="NombreUsuario?.hasError('required')" class="text-danger">
                         El Nombre de Usuario es requerido.
                     </p>
                 </div>  
-            <!-- /Corsico 3-->
-
-            <!-- Corsico 1 -->
         </div>
         <div class="mb-3">
             <label for="exampleInputPassword1" class="form-label">Constraseña</label>
@@ -27,7 +24,6 @@
             [ngClass]="{'is-invalid border border-danger border-4': Password?.errors && Password?.touched, 'is-valid':!Password?.errors && Password?.touched}"
             class="form-control" id="exampleInputPassword1">
             
-                <!-- Corsico 3 - colores form -->
                 <div *ngIf="Password?.errors && Password?.touched">
                     <p *ngIf="Password?.hasError('required')" class="text-danger">
                         La contraseña es requerida.
@@ -36,7 +32,7 @@
                        La contraseña ingresada tiene extensión inválida.
                     </p>
                 </div>         
-                 <!-- /Corsico 3-->
+
         </div>
         <button type="submit" class="btn btn-primary">Enviar</button>
     </form>

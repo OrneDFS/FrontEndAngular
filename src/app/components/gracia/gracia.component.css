@@ -1,8 +1,15 @@
 
+    h2{
+        margin: 4em 4em 3em 4em;
+    }
 
+    button {
+        margin: 1em 3em 3em 2em;
+    }
     .wrapper{
     background-color: var(--colorazul);
     text-align: center;
+ margin-bottom: 3em !important; 
     /* border:5px dotted dimgrey; */
     padding: 30px;
     }
@@ -11,6 +18,7 @@
     font-weight: bold;
     font-size: 30px;
     position: relative;
+    
     }
     #no{
     font-weight: bold;

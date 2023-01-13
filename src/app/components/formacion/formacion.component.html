@@ -1,113 +1,126 @@
 <section class="formacion" id="formacion">
-    <div class="filtro">
-          <h3 class="card-title experiencia-titulo formacion">Formación</h3>
-          <div class="d-flex justify-content-end">
-            <a *ngIf="logueado"  class="añadir"> <img  (click)="anadir()" src="../../../assets/img/Iconos/agregar.png" alt="Añadir" width="35" height="35"
-                class="align-items-end"> </a>
-          </div>
-   <!-- Acordeon -->
-     <div id="accordion">
+  <div class="filtro">
+    <h3 class="card-title experiencia-titulo formacion">Formación</h3>
+    <div class="d-flex justify-content-end">
+      <a *ngIf="logueado" class="añadir">
+        <img
+          (click)="anadir()"
+          src="../../../assets/img/Iconos/agregar.png"
+          alt="Añadir"
+          width="35"
+          height="35"
+          class="align-items-end"
+        />
+      </a>
+    </div>
+    <!-- Acordeon -->
+    <div id="accordion">
       <!-- Acordeon -->
       <!-- título -->
       <div class="accordion" id="accordionPanelsStayOpenExample">
         <div *ngFor="let estValArray of datosFormacion" class="accordion-item">
-          <h2  class="accordion-header" id="panelsStayOpen-headingOne">
-            <button class="d-flex justify-content-end accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="false" aria-controls="panelsStayOpen-collapseOne">
-              <strong *ngIf="!modificable[estValArray.id]"> {{estValArray.titulo}}</strong>
-              <textarea class="textarea" placeholder="Titulo" *ngIf="modificable[estValArray.id]" [(ngModel)]="estValArray.titulo"></textarea>
+          <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+            <button
+              class="d-flex justify-content-end accordion-button"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#panelsStayOpen-collapseOne"
+              aria-expanded="false"
+              aria-controls="panelsStayOpen-collapseOne"
+            >
+              <strong *ngIf="!modificable[estValArray.id]">
+                {{ estValArray.titulo }}</strong
+              >
+              <textarea
+                class="textarea"
+                placeholder="Titulo"
+                *ngIf="modificable[estValArray.id]"
+                [(ngModel)]="estValArray.titulo"
+              ></textarea>
             </button>
           </h2>
           <!-- Cuerpo -->
-          <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
-            <div class="accordion-body">  
-              <p><strong> {{estValArray.institucion}}</strong></p> 
-              <p>{{estValArray.descripcion}}</p>
+          <div
+            id="panelsStayOpen-collapseOne"
+            class="accordion-collapse collapse"
+            aria-labelledby="panelsStayOpen-headingOne"
+          >
+            <div class="accordion-body">
+              <p>
+                <strong>
+                  {{
+                    estValArray.institucion + " - " + estValArray.periodo
+                  }}</strong
+                >
+              </p>
+              <p>{{ estValArray.descripcion }}</p>
               <!-- iconos -->
               <div class="flex-column">
-              <div class="d-flex justify-content-end">
-                <textarea class="textarea"placeholder="Nombre de la Institucion" *ngIf="modificable[estValArray.id]" [(ngModel)]="estValArray.institucion"></textarea>
-                <textarea class="textarea"placeholder="Descripcion" *ngIf="modificable[estValArray.id]" [(ngModel)]="estValArray.descripcion"></textarea>
-                <a *ngIf="logueado"  > <img  (click)="habilitarEdicion(estValArray.id)" src="../../../assets/img/Iconos/editar.png" alt="editar" width="35" height="33" class="align-items-end">
-              </a>
-              <a *ngIf="logueado" > <img  (click)="eliminar(estValArray.id)" src="../../../assets/img/Iconos/delete.png" alt="eliminar" width="35" height="37" class="align-items-end">
-              </a>
-            </div>
-            </div>
-            <input *ngIf="modificable[estValArray.id]" class="btn btn-light"   type="submit" value="modificar" (click)="modificar(estValArray.id)">
-           <div >       
-            <!-- SUBIR IMAGEN A UN DRIVE  Y CREAR ATRIBUTO "url iMAGEN EN B.E"-->
-        <!-- Reemplazar el src !^  - ver linea 16 de experiencia.component--a [href]="experiencia.urlempresa"-->                   
-                <img [src]="estValArray.enlace" class="img-fluid justify-content-center argentinaP" alt="Img Institucion">
+                <div class="d-flex justify-content-end">
+                  <textarea
+                    class="textarea"
+                    placeholder="Nombre de la Institucion"
+                    *ngIf="modificable[estValArray.id]"
+                    [(ngModel)]="estValArray.institucion"
+                  ></textarea>
+                  <textarea
+                    class="textarea"
+                    placeholder="Periodo"
+                    *ngIf="modificable[estValArray.id]"
+                    [(ngModel)]="estValArray.periodo"
+                  ></textarea>
+                  <textarea
+                    class="textarea"
+                    placeholder="Descripcion"
+                    *ngIf="modificable[estValArray.id]"
+                    [(ngModel)]="estValArray.descripcion"
+                  ></textarea>
+                  <a *ngIf="logueado">
+                    <img
+                      (click)="habilitarEdicion(estValArray.id)"
+                      src="../../../assets/img/Iconos/editar.png"
+                      alt="editar"
+                      width="35"
+                      height="33"
+                      class="align-items-end"
+                    />
+                  </a>
+                  <a *ngIf="logueado">
+                    <img
+                      (click)="eliminar(estValArray.id)"
+                      src="../../../assets/img/Iconos/delete.png"
+                      alt="eliminar"
+                      width="35"
+                      height="37"
+                      class="align-items-end"
+                    />
+                  </a>
+                </div>
+              </div>
+              <input
+                *ngIf="modificable[estValArray.id]"
+                class="btn btn-light"
+                type="submit"
+                value="modificar"
+                (click)="modificar(estValArray.id)"
+              />
+              <div>
+                <img
+                  [src]="estValArray.enlace"
+                  class="img-fluid justify-content-center argentinaP"
+                  alt="Img Institucion"
+                />
+                <textarea
+                  class="textarea"
+                  placeholder="URL_Img"
+                  *ngIf="modificable[estValArray.id]"
+                  [(ngModel)]="estValArray.enlace"
+                ></textarea>
               </div>
             </div>
           </div>
         </div>
-        <!-- <div class="accordion-item">
-          <h2 class="accordion-header" id="panelsStayOpen-headingOne">
-            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="true" aria-controls="panelsStayOpen-collapseTwo">
-              <strong> Seminario de Narrativas Hipermediales </strong>
-            </button>
-          </h2>
-          <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
-            <div class="accordion-body">
-              <strong> Instituto Superior de Estudios Pedagógicos </strong> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.<code>.accordion-body</code>, though the transition does limit overflow.
-              <div class="d-flex justify-content-end">
-                <a href="#" class=> <img src="../../../assets/img/Iconos/editar.png" alt="editar" width="35" height="33" class="align-items-end">
-                </a>
-                <a href="#" class=> <img src="../../../assets/img/Iconos/delete.png" alt="eliminar" width="35" height="37" class="align-items-end">
-                </a>
-                </div>
-              <div>
-                <img src="https://isep-cba.edu.ar/campus/theme/campusfordson/pix/logoiseptexto.png?v=1.1" class="img-fluid justify-content-center" alt="ISEP">
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="panelsStayOpen-headingOne">
-            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="true" aria-controls="panelsStayOpen-collapseThree">
-              <strong> Seminario de Pensamiento Computacional </strong>
-            </button>
-          </h2>
-          <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
-            <div class="accordion-body">
-              <strong> Instituto Superior de Estudios Pedagógicos </strong> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.<code>.accordion-body</code>, though the transition does limit overflow.
-              <div class="d-flex justify-content-end">
-                <a href="#" class=> <img src="../../../assets/img/Iconos/editar.png" alt="editar" width="35" height="33" class="align-items-end">
-                </a>
-                <a href="#" class=> <img src="../../../assets/img/Iconos/delete.png" alt="eliminar" width="35" height="37" class="align-items-end">
-                </a>
-                </div>
-              <div>
-                <img src="https://isep-cba.edu.ar/campus/theme/campusfordson/pix/logoiseptexto.png?v=1.1" class="img-fluid justify-content-center" alt="ISEP">
-              </div>
-            </div>
-          </div>
-        </div>  
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="panelsStayOpen-headingOne">
-            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFour" aria-expanded="true" aria-controls="panelsStayOpen-collapseFour">
-              <strong> Profesorado de Educación Primaria </strong>
-            </button>
-          </h2>
-          <div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
-            <div class="accordion-body">
-              <strong> Instituto Superior Carlos Alberto Leguizamón </strong> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.<code>.accordion-body</code>, though the transition does limit overflow.
-              <div class="d-flex justify-content-end">
-                <a href="#" class=> <img src="../../../assets/img/Iconos/editar.png" alt="editar" width="35" height="33" class="align-items-end">
-                </a>
-                <a href="#" class=> <img src="../../../assets/img/Iconos/delete.png" alt="eliminar" width="35" height="37" class="align-items-end">
-                </a>
-                </div>
-              <div>
-                <img src="https://isleguizamon-cba.infd.edu.ar/aula/archivos/logos/Instituto_Superior_carlos_alberto_leguizamon.png" class="img-fluid justify-content-center" alt="Gupo Tandem BPO">
-              </div>
-            </div>
-          </div>
-        </div> -->
-        
       </div>
     </div>
-      
-    </div>
-    </section>
+  </div>
+</section>

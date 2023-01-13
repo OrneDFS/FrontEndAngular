@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 })
 
 export class PortfolioService {
-  url: string = 'http://localhost:8080'; // acá va a ir la url de la API
+  url: string = 'https://ornedesfs.onrender.com'; // acá va a ir la url de la API
 
   constructor( private http:HttpClient) {}
 

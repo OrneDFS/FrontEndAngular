@@ -9,12 +9,13 @@
     
     <div class="card d-flex flex-row-reverse flex-wrap">
       <div *ngFor="let proyValArray of datosProyectos" class="card-body" style="width: 18rem;">
-        <h5 class="card-title"> <strong *ngIf="!modificable[proyValArray.id]"> {{proyValArray.titulo}}</strong></h5>
+        <a [href]="proyValArray.urlProy">
+        <h5   class="card-title" > <strong *ngIf="!modificable[proyValArray.id]"> {{proyValArray.titulo}}</strong></h5>
+      </a>
         <textarea class="textarea" placeholder="Titulo" *ngIf="modificable[proyValArray.id]" [(ngModel)]="proyValArray.titulo"></textarea>
-        <p class="card-text">{{proyValArray.descripcion}}</p>
+        <p [innerHTML]="proyValArray.descripcion" class="card-text"></p>
         <textarea class="textarea"placeholder="Descripcion" *ngIf="modificable[proyValArray.id]" [(ngModel)]="proyValArray.descripcion"></textarea>
-        <a [href]="proyValArray.urlProy" class="card-link">Navegar</a>
-        <textarea class="textarea"placeholder="Url del Proyecto" *ngIf="modificable[proyValArray.id]" [(ngModel)]="proyValArray.url_proy"></textarea>
+        <textarea class="textarea"placeholder="Url del Proyecto" *ngIf="modificable[proyValArray.id]" [(ngModel)]="proyValArray.urlProy"></textarea>
       <!-- iconos -->
         <div class="flex-column">
           <div class="d-flex justify-content-end">
@@ -26,3 +27,4 @@
         <input *ngIf="modificable[proyValArray.id]" class="btn btn-light"   type="submit" value="modificar" (click)="modificar(proyValArray.id)">
       </div>
     </div>
+ 

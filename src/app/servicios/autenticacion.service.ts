@@ -12,13 +12,12 @@ import { Router } from '@angular/router';
 // corsico 1 --  28 min hasta 33
 
 export class AutenticacionService {
-url="http://localhost:8080/auth"; // modificar despues con la url real 
+url="https://ornedesfs.onrender.com/auth"; // modificar despues con la url real 
 
 currentUsersubject: BehaviorSubject<any>;
 
 constructor(private http:HttpClient, private router:Router) {
 
-    console.log("[] servicio de autenticacion corriendo...");
     this.currentUsersubject = new BehaviorSubject<any>(JSON.parse(sessionStorage.getItem('currentUser')||'{}'));
   }
 

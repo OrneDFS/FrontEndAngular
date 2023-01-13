@@ -20,6 +20,7 @@ import { LoadingComponent } from './components/loading/loading.component';
 import { GraciaComponent } from './components/gracia/gracia.component';
 import { PortfolioService } from './servicios/portfolio.service';
 import { InterceptorService } from './servicios/interceptor.service';
+import { ReconocimientosComponent } from './components/reconocimientos/reconocimientos.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { InterceptorService } from './servicios/interceptor.service';
     IniciarSesionComponent,
     PortfolioComponent,
     LoadingComponent,
-    GraciaComponent
+    GraciaComponent,
+    ReconocimientosComponent
   ],
   imports: [
     BrowserModule,

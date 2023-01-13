@@ -35,7 +35,6 @@ export class AcercaDeComponent implements OnInit {
   ngOnInit(): void {
     this.datosPortfolio.verPersona().subscribe(data=>{
       this.datosMiPersona = data;
-      console.log(this.datosMiPersona);
     })
   }
 

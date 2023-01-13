@@ -31,7 +31,6 @@ export class FormacionComponent implements OnInit {
   ngOnInit(): void {
     this.datosPortfolio.verEstudio().subscribe(data=>{
       this.datosFormacion = data;
-      console.log(this.datosFormacion);
     })
   }
 

@@ -19,7 +19,7 @@ export class ProyectosComponent implements OnInit {
     "id": "",
     "titulo": "",
     "descripcion": "",
-    "urlProy": "https://zaraza.com",
+    "urlProy": "",
     "persona": {
             "id": 1
             }
@@ -29,7 +29,7 @@ export class ProyectosComponent implements OnInit {
     ngOnInit(): void {
     this.datosPortfolio.verProyecto().subscribe(data=>{
       this.datosProyectos = data;
-      console.log(this.datosProyectos);
+      this.prepararDatos();
     })
   }
 
@@ -63,6 +63,11 @@ export class ProyectosComponent implements OnInit {
     location.reload();
   }
 
+  prepararDatos() {
+
+    this.datosProyectos[0].descripcion=this.datosProyectos[0].descripcion.split("\n").join("<br />");
+ 
+  }
 
   }
 

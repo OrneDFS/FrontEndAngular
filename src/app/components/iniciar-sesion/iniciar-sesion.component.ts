@@ -52,23 +52,16 @@ export class IniciarSesionComponent implements OnInit {
       return this.form.get('password');
     }
 
-    // fin corsico 2 min 19.30 
-
-    // corsico 3 min 33
 
     onEnviar(event:Event){
       event.preventDefault;
       if(this.form.valid){
       this.autenticacionService.iniciarSession(this.form.value).subscribe(data=>{
-        // console.log("DATA:" + JSON.stringify(data));
         this.ruta.navigate(['/portfolio']);
-      
-      })
+            })
     }
     else{
       this.form.markAllAsTouched();
     }
     }
-     // fin corsico 3 min 35.3
-
 }  
