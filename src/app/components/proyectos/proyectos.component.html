@@ -1,30 +1,84 @@
-<section class="proyectos " id="proyectos">
-    <div class="p-2 "> 
-      <h3 class="card-title experiencia-titulo">Proyectos</h3>
-      <div class="d-flex justify-content-end align-items-center">
-        <a *ngIf="logueado"  class="añadir"> <img  (click)="anadir()"  src="../../../assets/img/Iconos/agregar.png" alt="Añadir" width="35" height="35"
-            class="align-items-end"> </a>
-      </div>
-    </div >
-    
-    <div class="card d-flex flex-row-reverse flex-wrap">
-      <div *ngFor="let proyValArray of datosProyectos" class="card-body" style="width: 18rem;">
-        <a [href]="proyValArray.urlProy">
-        <h5   class="card-title" > <strong *ngIf="!modificable[proyValArray.id]"> {{proyValArray.titulo}}</strong></h5>
+<section class="proyectos" id="proyectos">
+  <div class="p-2">
+    <h3 class="card-title experiencia-titulo">Proyectos</h3>
+    <div class="d-flex justify-content-end align-items-center">
+      <a *ngIf="logueado" class="añadir">
+        <img
+          (click)="anadir()"
+          src="../../../assets/img/Iconos/agregar.png"
+          alt="Añadir"
+          width="35"
+          height="35"
+          class="align-items-end"
+        />
       </a>
-        <textarea class="textarea" placeholder="Titulo" *ngIf="modificable[proyValArray.id]" [(ngModel)]="proyValArray.titulo"></textarea>
-        <p [innerHTML]="proyValArray.descripcion" class="card-text"></p>
-        <textarea class="textarea"placeholder="Descripcion" *ngIf="modificable[proyValArray.id]" [(ngModel)]="proyValArray.descripcion"></textarea>
-        <textarea class="textarea"placeholder="Url del Proyecto" *ngIf="modificable[proyValArray.id]" [(ngModel)]="proyValArray.urlProy"></textarea>
+    </div>
+  </div>
+
+  <div class="card d-flex flex-row-reverse flex-wrap">
+    <div
+      *ngFor="let proyValArray of datosProyectos"
+      class="card-body"
+      style="width: 18rem"
+    >
+      <a [href]="proyValArray.urlProy">
+        <h5 class="card-title">
+          <strong *ngIf="!modificable[proyValArray.id]">
+            {{ proyValArray.titulo }}</strong
+          >
+        </h5>
+      </a>
+      <textarea
+        class="textarea"
+        placeholder="Titulo"
+        *ngIf="modificable[proyValArray.id]"
+        [(ngModel)]="proyValArray.titulo"
+      ></textarea>
+      <p [innerHTML]="proyValArray.descripcion" class="card-text"></p>
+      <textarea
+        class="textarea"
+        placeholder="Descripcion"
+        *ngIf="modificable[proyValArray.id]"
+        [(ngModel)]="proyValArray.descripcion"
+      ></textarea>
+      <textarea
+        class="textarea"
+        placeholder="Url del Proyecto"
+        *ngIf="modificable[proyValArray.id]"
+        [(ngModel)]="proyValArray.urlProy"
+      ></textarea>
       <!-- iconos -->
-        <div class="flex-column">
-          <div class="d-flex justify-content-end">
-            <a *ngIf="logueado"  > <img  (click)="habilitarEdicion(proyValArray.id)" src="../../../assets/img/Iconos/editar.png" alt="editar" width="35" height="33" class="align-items-end">
+      <div class="flex-column">
+        <div class="d-flex justify-content-end">
+          <a *ngIf="logueado">
+            <img
+              (click)="habilitarEdicion(proyValArray.id)"
+              src="../../../assets/img/Iconos/editar.png"
+              alt="editar"
+              width="35"
+              height="33"
+              class="align-items-end"
+            />
           </a>
-          <a *ngIf="logueado"  > <img  (click)="eliminar(proyValArray.id)" src="../../../assets/img/Iconos/delete.png" alt="eliminar" width="35" height="37" class="align-items-end">
+          <a *ngIf="logueado">
+            <img
+              (click)="eliminar(proyValArray.id)"
+              src="../../../assets/img/Iconos/delete.png"
+              alt="eliminar"
+              width="35"
+              height="37"
+              class="align-items-end"
+            />
           </a>
         </div>
-        <input *ngIf="modificable[proyValArray.id]" class="btn btn-light"   type="submit" value="modificar" (click)="modificar(proyValArray.id)">
+        <input
+          *ngIf="modificable[proyValArray.id]"
+          class="btn btn-light"
+          type="submit"
+          value="modificar"
+          (click)="modificar(proyValArray.id)"
+        />
       </div>
     </div>
- 
+  </div>
+</section>

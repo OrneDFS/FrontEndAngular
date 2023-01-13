@@ -6,15 +6,17 @@ main {
     background-size: cover; 
     display: flex;
     justify-content: center;
+    align-items: center;
     position: relative;
+    margin: 0;
     margin-bottom: 60px;
 } 
 
 h1 {
-    font-size: 700%;
+    font-size: 8vw;
     font-weight: bold;
-    vertical-align: sub;
-    margin: 165px 80px 0 80PX;
+    /* vertical-align: sub; */
+    margin:0 80px 0 80PX;
     text-align: center;
     background: linear-gradient( to right,#031026fd ,#f2f0f3c0,#031026fd );
     -webkit-background-clip: text;
@@ -33,7 +35,7 @@ h1 {
 .container{
     position:absolute;
     bottom: -80px;
-    left:50px;
+
 
 }
 

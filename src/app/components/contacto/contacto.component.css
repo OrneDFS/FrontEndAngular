@@ -9,3 +9,12 @@
     position: relative;
     color:var(--colorgristopo);
  }
+
+ #gracias {
+   margin: 0;
+   width: 30vw;
+ }
+
+ .responsiva{
+   width: 50vw;
+ }

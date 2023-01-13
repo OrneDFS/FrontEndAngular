@@ -12,3 +12,6 @@ p {
     outline: none;
   }
   
+  .portfolio{
+    position: relative;
+  }
